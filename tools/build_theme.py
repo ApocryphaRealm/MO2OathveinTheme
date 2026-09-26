@@ -214,7 +214,7 @@ def build(t, template, version):
 
 
 def main():
-    version = open(os.path.join(ROOT, "VERSION"), encoding="utf-8").read().strip()   # issued by the version gate
+    version = open(os.path.join(ROOT, "VERSION"), encoding="utf-8-sig").read().strip()   # issued by the version gate
     template = open(os.path.join(ROOT, "src", "theme.qss.in"), encoding="utf-8").read()
     if os.path.isdir(OUT):
         shutil.rmtree(OUT)
