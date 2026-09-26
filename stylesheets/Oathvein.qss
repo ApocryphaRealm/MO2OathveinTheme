@@ -1,0 +1,389 @@
+/* Oathvein - a Mod Organizer 2 theme, version 1.0.0. BUILT by tools\build_themes.py from src\theme.qss.in and the
+   theme's palette; edit those, not this file. Colours are the Apocrypha Menu Framework "Oathvein" theme's: background
+   #191919, frame #a6a8a7, lines #a6a8a7, text #e8e8e8, secondary text #8c8c8c, accent #8e2a2e, with AMF's own graded tints
+   (lines at 55% for separators, 28% for hover, 14% for subtle fills; accent at 22% for selection, 42% when hovered). */
+
+/* ---- Base ---- */
+* {
+  outline: none; }
+QWidget {
+  background-color: #191919;
+  color: #e8e8e8;
+  selection-background-color: rgba(142, 42, 46, 0.42);
+  selection-color: #e8e8e8; }
+QWidget:disabled {
+  color: #8c8c8c; }
+QMainWindow, QDialog {
+  background-color: #191919;
+  background-image: url("./Oathvein/art/background.png"); }
+QMainWindow::separator {
+  background-color: rgba(166, 168, 167, 0.14);
+  width: 4px;
+  height: 4px; }
+QToolTip {
+  background-color: #191919;
+  color: #e8e8e8;
+  border: 1px solid #a6a8a7;
+  padding: 4px; }
+QLabel, QCheckBox, QRadioButton {
+  background-color: transparent; }
+LinkLabel {
+  qproperty-linkColor: #8e2a2e; }
+QSplitter::handle {
+  background-color: transparent; }
+QSplitter::handle:hover {
+  background-color: rgba(166, 168, 167, 0.28); }
+
+/* ---- Frames: the theme's own frame art where it has one ---- */
+QGroupBox {
+  border-image: url("./Oathvein/art/frame.png") 26 26 26 26 stretch; border-width: 26px;
+  margin-top: 1.4em;
+  padding-top: 6px; }
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  left: 10px;
+  padding: 0 4px;
+  color: #e8e8e8; }
+QTabWidget::pane {
+  border-image: url("./Oathvein/art/frame.png") 26 26 26 26 stretch; border-width: 26px;
+  top: -1px; }
+QFrame[frameShape="4"], QFrame[frameShape="5"] {
+  color: rgba(166, 168, 167, 0.55); }
+
+/* ---- Menus and the toolbar ---- */
+QMenuBar {
+  background-color: #191919;
+  border-bottom: 1px solid rgba(166, 168, 167, 0.55); }
+QMenuBar::item {
+  background: transparent;
+  padding: 4px 10px; }
+QMenuBar::item:selected {
+  background-color: rgba(166, 168, 167, 0.28); }
+QMenu {
+  background-color: #191919;
+  border: 1px solid #a6a8a7;
+  padding: 4px 0; }
+QMenu::item {
+  padding: 5px 24px 5px 24px;
+  background: transparent; }
+QMenu::item:selected {
+  background-color: rgba(142, 42, 46, 0.42);
+  color: #e8e8e8; }
+QMenu::item:disabled {
+  color: #8c8c8c; }
+QMenu::separator {
+  height: 1px;
+  background-color: rgba(166, 168, 167, 0.55);
+  margin: 4px 8px; }
+QToolBar {
+  background-color: #191919;
+  border: none;
+  border-bottom: 1px solid rgba(166, 168, 167, 0.55);
+  spacing: 4px;
+  padding: 2px; }
+QToolBar::separator {
+  background-color: rgba(166, 168, 167, 0.55);
+  width: 1px;
+  margin: 6px 4px; }
+QToolButton {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 3px; }
+QToolButton:hover, QToolButton:focus {
+  background-color: rgba(166, 168, 167, 0.28);
+  border: 1px solid rgba(166, 168, 167, 0.55); }
+QToolButton:pressed, QToolButton:checked {
+  background-color: rgba(142, 42, 46, 0.22);
+  border: 1px solid #a6a8a7; }
+QToolButton::menu-indicator {
+  image: url("./Oathvein/art/arrow-down.svg");
+  width: 8px;
+  height: 8px;
+  subcontrol-position: bottom right;
+  subcontrol-origin: padding; }
+QToolButton::menu-button {
+  border: none;
+  width: 12px; }
+
+/* ---- Buttons: the theme's plate shape ---- */
+QPushButton {
+  border-image: url("./Oathvein/art/button.svg") 8 8 8 8 stretch;
+  border-width: 8px;
+  padding: -4px 6px;
+  min-height: 14px;
+  min-width: 48px;
+  color: #e8e8e8; }
+QPushButton:hover, QPushButton:focus {
+  border-image: url("./Oathvein/art/button-hover.svg") 8 8 8 8 stretch; }
+QPushButton:pressed, QPushButton:checked {
+  border-image: url("./Oathvein/art/button-pressed.svg") 8 8 8 8 stretch; }
+QPushButton:disabled {
+  border-image: url("./Oathvein/art/button-disabled.svg") 8 8 8 8 stretch;
+  color: #8c8c8c; }
+QPushButton::menu-indicator {
+  image: url("./Oathvein/art/arrow-down.svg");
+  width: 8px;
+  height: 8px;
+  subcontrol-position: right center;
+  subcontrol-origin: padding;
+  right: 2px; }
+QDialogButtonBox QPushButton {
+  min-width: 72px; }
+
+/* ---- Inputs ---- */
+QLineEdit, QTextEdit, QPlainTextEdit, QAbstractSpinBox {
+  background-color: #232323;
+  border: 1px solid rgba(166, 168, 167, 0.55);
+  padding: 3px;
+  selection-background-color: rgba(142, 42, 46, 0.42); }
+QLineEdit:hover, QTextEdit:hover, QPlainTextEdit:hover, QAbstractSpinBox:hover {
+  border: 1px solid #a6a8a7; }
+QLineEdit:focus, QTextEdit:focus, QPlainTextEdit:focus, QAbstractSpinBox:focus {
+  border: 1px solid #a6a8a7;
+  background-color: #2b2c2b; }
+QLineEdit[valid-filter=false] {
+  background-color: #592225; }
+QAbstractSpinBox::up-button, QAbstractSpinBox::down-button {
+  background: transparent;
+  border: none;
+  width: 14px; }
+QAbstractSpinBox::up-arrow {
+  image: url("./Oathvein/art/arrow-up.svg");
+  width: 8px;
+  height: 8px; }
+QAbstractSpinBox::down-arrow {
+  image: url("./Oathvein/art/arrow-down.svg");
+  width: 8px;
+  height: 8px; }
+QComboBox {
+  background-color: #232323;
+  border: 1px solid rgba(166, 168, 167, 0.55);
+  padding: 3px 22px 3px 6px;
+  min-height: 18px; }
+QComboBox:hover, QComboBox:on {
+  border: 1px solid #a6a8a7; }
+QComboBox::drop-down {
+  border: none;
+  width: 20px;
+  subcontrol-origin: padding;
+  subcontrol-position: top right; }
+QComboBox::down-arrow {
+  image: url("./Oathvein/art/arrow-down.svg");
+  width: 10px;
+  height: 10px; }
+QComboBox QAbstractItemView {
+  background-color: #191919;
+  border: 1px solid #a6a8a7;
+  selection-background-color: rgba(142, 42, 46, 0.42);
+  outline: none; }
+
+/* ---- Check boxes and radio buttons, in the list views too ---- */
+QCheckBox, QRadioButton {
+  spacing: 6px; }
+QCheckBox::indicator, QTreeView::indicator, QListView::indicator, QTableView::indicator, QGroupBox::indicator {
+  width: 14px;
+  height: 14px; }
+QCheckBox::indicator:unchecked, QTreeView::indicator:unchecked, QListView::indicator:unchecked, QTableView::indicator:unchecked, QGroupBox::indicator:unchecked {
+  image: url("./Oathvein/art/check-off.svg"); }
+QCheckBox::indicator:unchecked:hover, QTreeView::indicator:unchecked:hover, QListView::indicator:unchecked:hover, QGroupBox::indicator:unchecked:hover {
+  image: url("./Oathvein/art/check-off-hover.svg"); }
+QCheckBox::indicator:checked, QTreeView::indicator:checked, QListView::indicator:checked, QTableView::indicator:checked, QGroupBox::indicator:checked {
+  image: url("./Oathvein/art/check-on.svg"); }
+QCheckBox::indicator:indeterminate, QTreeView::indicator:indeterminate {
+  image: url("./Oathvein/art/check-part.svg"); }
+QCheckBox::indicator:disabled, QTreeView::indicator:disabled {
+  image: url("./Oathvein/art/check-disabled.svg"); }
+QRadioButton::indicator {
+  width: 14px;
+  height: 14px; }
+QRadioButton::indicator:unchecked {
+  image: url("./Oathvein/art/radio-off.svg"); }
+QRadioButton::indicator:unchecked:hover {
+  image: url("./Oathvein/art/radio-off-hover.svg"); }
+QRadioButton::indicator:checked {
+  image: url("./Oathvein/art/radio-on.svg"); }
+
+/* ---- Lists, trees and tables ---- */
+QAbstractItemView {
+  background-color: #191919;
+  alternate-background-color: #191919;
+  border: 1px solid rgba(166, 168, 167, 0.55);
+  selection-background-color: rgba(142, 42, 46, 0.42);
+  selection-color: #e8e8e8; }
+QAbstractItemView[filtered=true] {
+  border: 1px solid #8e2a2e; }
+QAbstractItemView::item:hover {
+  background-color: rgba(166, 168, 167, 0.28); }
+QAbstractItemView::item:selected {
+  background-color: rgba(142, 42, 46, 0.42);
+  color: #e8e8e8; }
+QTreeView::branch {
+  background: transparent; }
+QTreeView::branch:has-children:!has-siblings:closed, QTreeView::branch:closed:has-children:has-siblings {
+  image: url("./Oathvein/art/arrow-right.svg"); }
+QTreeView::branch:open:has-children:!has-siblings, QTreeView::branch:open:has-children:has-siblings {
+  image: url("./Oathvein/art/arrow-down.svg"); }
+QHeaderView {
+  background-color: #191919;
+  border: none; }
+QHeaderView::section {
+  background-color: #191919;
+  color: #8c8c8c;
+  border: none;
+  border-right: 1px solid rgba(166, 168, 167, 0.14);
+  border-bottom: 1px solid rgba(166, 168, 167, 0.55);
+  padding: 4px 4px; }
+QHeaderView::section:hover {
+  background-color: rgba(166, 168, 167, 0.28);
+  color: #e8e8e8; }
+QHeaderView::up-arrow {
+  image: url("./Oathvein/art/arrow-up.svg");
+  width: 8px;
+  height: 8px; }
+QHeaderView::down-arrow {
+  image: url("./Oathvein/art/arrow-down.svg");
+  width: 8px;
+  height: 8px; }
+QTableView QTableCornerButton::section {
+  background-color: #191919;
+  border: none; }
+
+/* ---- The mod list: separators and mods coloured separately. With collapsible separators MO2's list is a tree whose
+   parent rows are the separators, so ::item:has-children is a separator and nothing else; mods are the view's own
+   background, and no ::item rule touches a mod row, so MO2's conflict highlight stays visible. ---- */
+QTreeView#modList {
+  background-color: #191919;
+  alternate-background-color: #191919; }
+QTreeView#modList::item:has-children {
+  background-color: #3a1c1e;
+  color: #e8e8e8; }
+QTreeView#modList::item:has-children:hover {
+  background-color: rgba(166, 168, 167, 0.28); }
+QTreeView#modList::item:has-children:selected {
+  background-color: rgba(142, 42, 46, 0.42); }
+
+/* ---- Tabs ---- */
+QTabBar {
+  background: transparent; }
+QTabBar::tab {
+  background-color: transparent;
+  color: #8c8c8c;
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgba(166, 168, 167, 0.55);
+  padding: 5px 12px;
+  margin-right: 2px; }
+QTabBar::tab:hover {
+  color: #e8e8e8;
+  background-color: rgba(166, 168, 167, 0.28); }
+QTabBar::tab:selected {
+  color: #e8e8e8;
+  background-color: rgba(142, 42, 46, 0.22);
+  border: 1px solid #a6a8a7;
+  border-bottom: 1px solid #8e2a2e; }
+QTabBar::tab:disabled {
+  color: rgba(166, 168, 167, 0.55); }
+QTabBar QToolButton {
+  background-color: #191919;
+  border: 1px solid rgba(166, 168, 167, 0.55); }
+QTabBar QToolButton::left-arrow {
+  image: url("./Oathvein/art/arrow-left.svg"); }
+QTabBar QToolButton::right-arrow {
+  image: url("./Oathvein/art/arrow-right.svg"); }
+
+/* ---- Scrollbars ---- */
+QScrollBar:vertical {
+  background-color: #191919;
+  width: 12px;
+  margin: 0; }
+QScrollBar:horizontal {
+  background-color: #191919;
+  height: 12px;
+  margin: 0; }
+QScrollBar::handle:vertical {
+  background-color: rgba(166, 168, 167, 0.55);
+  min-height: 24px;
+  margin: 2px 3px; }
+QScrollBar::handle:horizontal {
+  background-color: rgba(166, 168, 167, 0.55);
+  min-width: 24px;
+  margin: 3px 2px; }
+QScrollBar::handle:hover {
+  background-color: #a6a8a7; }
+QScrollBar::add-line, QScrollBar::sub-line {
+  width: 0;
+  height: 0;
+  border: none;
+  background: none; }
+QScrollBar::add-page, QScrollBar::sub-page {
+  background: none; }
+QAbstractScrollArea::corner {
+  background-color: #191919; }
+
+/* ---- Progress, sliders, the rest ---- */
+QProgressBar {
+  background-color: #232323;
+  border: 1px solid rgba(166, 168, 167, 0.55);
+  text-align: center;
+  color: #e8e8e8; }
+QProgressBar::chunk {
+  background-color: rgba(142, 42, 46, 0.7); }
+QSlider::groove:horizontal {
+  height: 2px;
+  background-color: rgba(166, 168, 167, 0.55); }
+QSlider::handle:horizontal {
+  background-color: #8e2a2e;
+  border: 1px solid #a6a8a7;
+  width: 10px;
+  margin: -6px 0; }
+QStatusBar {
+  background-color: #191919;
+  border-top: 1px solid rgba(166, 168, 167, 0.55); }
+QStatusBar::item {
+  border: none; }
+QDockWidget::title {
+  background-color: #191919;
+  border-bottom: 1px solid rgba(166, 168, 167, 0.55);
+  padding: 4px; }
+QLCDNumber {
+  background-color: #232323;
+  border: 1px solid rgba(166, 168, 167, 0.55);
+  color: #e8e8e8; }
+SaveGameInfoWidget {
+  background-color: #191919;
+  border: 1px solid #a6a8a7;
+  color: #e8e8e8; }
+
+/* ---- Icons: Njordlinger's set in every theme (the owner, 2026-09-26: "i like the icons in njordlinger so keep all of them
+   for every theme"). MO2 copies qproperty-icon from dummy buttons named after its toolbar actions onto the actions
+   (src/mainwindow.cpp, v2.5.2); the other names are MO2's own buttons. ---- */
+#actionChange_Game { qproperty-icon: url("./Oathvein/icons/actionChange_Game.png"); }
+#actionInstallMod { qproperty-icon: url("./Oathvein/icons/actionInstallMod.png"); }
+#actionNexus { qproperty-icon: url("./Oathvein/icons/actionNexus.png"); }
+#actionModPage { qproperty-icon: url("./Oathvein/icons/actionModPage.png"); }
+#actionAdd_Profile { qproperty-icon: url("./Oathvein/icons/actionAdd_Profile.png"); }
+#action_Refresh { qproperty-icon: url("./Oathvein/icons/action_Refresh.png"); }
+#actionModify_Executables { qproperty-icon: url("./Oathvein/icons/actionModify_Executables.png"); }
+#actionTool { qproperty-icon: url("./Oathvein/icons/actionTool.png"); }
+#actionSettings { qproperty-icon: url("./Oathvein/icons/actionSettings.png"); }
+#actionEndorseMO { qproperty-icon: url("./Oathvein/icons/actionEndorseMO.png"); }
+#actionNotifications { qproperty-icon: url("./Oathvein/icons/problems.svg"); }
+#actionUpdate { qproperty-icon: url("./Oathvein/icons/actionUpdate.png"); }
+#actionHelp { qproperty-icon: url("./Oathvein/icons/actionHelp.png"); }
+
+#refreshButton, #btnRefreshData, #dataTabRefresh, #btnRefreshDownloads, #refresh {
+  qproperty-icon: url("./Oathvein/icons/action_Refresh.png"); icon-size: 18px; }
+#visitNexus { qproperty-icon: url("./Oathvein/icons/actionNexus.png"); }
+#endorse { qproperty-icon: url("./Oathvein/icons/actionEndorseMO.png"); icon-size: 18px; }
+#listOptionsBtn { qproperty-icon: url("./Oathvein/icons/dots.svg"); }
+#openFolderMenu { qproperty-icon: url("./Oathvein/icons/folder.svg"); icon-size: 18px; }
+#restoreModsButton, #restoreButton { qproperty-icon: url("./Oathvein/icons/restore.svg"); icon-size: 18px; }
+#saveModsButton, #saveButton { qproperty-icon: url("./Oathvein/icons/backup.svg"); icon-size: 18px; }
+#clearFiltersButton { qproperty-icon: url("./Oathvein/icons/cross.svg"); }
+#bossButton { qproperty-icon: url("./Oathvein/icons/sort.svg"); icon-size: 18px; }
+#clearCacheButton, #revokeNexusAuthButton, #nexusDisconnect { qproperty-icon: url("./Oathvein/icons/cross.svg"); icon-size: 18px; }
+#deactivateESP { qproperty-icon: url("./Oathvein/icons/minus.svg"); }
+#activateESP { qproperty-icon: url("./Oathvein/icons/plus.svg"); }
+#startButton { qproperty-icon: url("./Oathvein/icons/play.svg"); }
+#linkButton { qproperty-icon: url("./Oathvein/icons/shortcut.svg"); icon-size: 18px; }
+#track { qproperty-icon: url("./Oathvein/icons/pin.svg"); }

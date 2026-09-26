@@ -1,0 +1,389 @@
+/* $title$ - a Mod Organizer 2 theme, version $version$. BUILT by tools\build_themes.py from src\theme.qss.in and the
+   theme's palette; edit those, not this file. Colours are the Apocrypha Menu Framework "$title$" theme's: background
+   $bg$, frame $frame$, lines $border$, text $text$, secondary text $dim$, accent $accent$, with AMF's own graded tints
+   (lines at 55% for separators, 28% for hover, 14% for subtle fills; accent at 22% for selection, 42% when hovered). */
+
+/* ---- Base ---- */
+* {
+  outline: none; }
+QWidget {
+  background-color: $bg$;
+  color: $text$;
+  selection-background-color: $accent_soft$;
+  selection-color: $text$; }
+QWidget:disabled {
+  color: $dim$; }
+QMainWindow, QDialog {
+  background-color: $bg$;
+  $bg_image$ }
+QMainWindow::separator {
+  background-color: $border_faint$;
+  width: 4px;
+  height: 4px; }
+QToolTip {
+  background-color: $bg$;
+  color: $text$;
+  border: 1px solid $border$;
+  padding: 4px; }
+QLabel, QCheckBox, QRadioButton {
+  background-color: transparent; }
+LinkLabel {
+  qproperty-linkColor: $accent_text$; }
+QSplitter::handle {
+  background-color: transparent; }
+QSplitter::handle:hover {
+  background-color: $border_soft$; }
+
+/* ---- Frames: the theme's own frame art where it has one ---- */
+QGroupBox {
+  $frame_decl$
+  margin-top: 1.4em;
+  padding-top: 6px; }
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  left: 10px;
+  padding: 0 4px;
+  color: $text$; }
+QTabWidget::pane {
+  $frame_decl$
+  top: -1px; }
+QFrame[frameShape="4"], QFrame[frameShape="5"] {
+  color: $border_dim$; }
+
+/* ---- Menus and the toolbar ---- */
+QMenuBar {
+  background-color: $bg$;
+  border-bottom: 1px solid $border_dim$; }
+QMenuBar::item {
+  background: transparent;
+  padding: 4px 10px; }
+QMenuBar::item:selected {
+  background-color: $border_soft$; }
+QMenu {
+  background-color: $bg$;
+  border: 1px solid $border$;
+  padding: 4px 0; }
+QMenu::item {
+  padding: 5px 24px 5px 24px;
+  background: transparent; }
+QMenu::item:selected {
+  background-color: $accent_soft$;
+  color: $text$; }
+QMenu::item:disabled {
+  color: $dim$; }
+QMenu::separator {
+  height: 1px;
+  background-color: $border_dim$;
+  margin: 4px 8px; }
+QToolBar {
+  background-color: $bg$;
+  border: none;
+  border-bottom: 1px solid $border_dim$;
+  spacing: 4px;
+  padding: 2px; }
+QToolBar::separator {
+  background-color: $border_dim$;
+  width: 1px;
+  margin: 6px 4px; }
+QToolButton {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 3px; }
+QToolButton:hover, QToolButton:focus {
+  background-color: $border_soft$;
+  border: 1px solid $border_dim$; }
+QToolButton:pressed, QToolButton:checked {
+  background-color: $accent_faint$;
+  border: 1px solid $border$; }
+QToolButton::menu-indicator {
+  image: url("./$folder$/art/arrow-down.svg");
+  width: 8px;
+  height: 8px;
+  subcontrol-position: bottom right;
+  subcontrol-origin: padding; }
+QToolButton::menu-button {
+  border: none;
+  width: 12px; }
+
+/* ---- Buttons: the theme's plate shape ---- */
+QPushButton {
+  border-image: url("./$folder$/art/button.svg") 8 8 8 8 stretch;
+  border-width: 8px;
+  padding: -4px 6px;
+  min-height: 14px;
+  min-width: 48px;
+  color: $text$; }
+QPushButton:hover, QPushButton:focus {
+  border-image: url("./$folder$/art/button-hover.svg") 8 8 8 8 stretch; }
+QPushButton:pressed, QPushButton:checked {
+  border-image: url("./$folder$/art/button-pressed.svg") 8 8 8 8 stretch; }
+QPushButton:disabled {
+  border-image: url("./$folder$/art/button-disabled.svg") 8 8 8 8 stretch;
+  color: $dim$; }
+QPushButton::menu-indicator {
+  image: url("./$folder$/art/arrow-down.svg");
+  width: 8px;
+  height: 8px;
+  subcontrol-position: right center;
+  subcontrol-origin: padding;
+  right: 2px; }
+QDialogButtonBox QPushButton {
+  min-width: 72px; }
+
+/* ---- Inputs ---- */
+QLineEdit, QTextEdit, QPlainTextEdit, QAbstractSpinBox {
+  background-color: $input$;
+  border: 1px solid $border_dim$;
+  padding: 3px;
+  selection-background-color: $accent_soft$; }
+QLineEdit:hover, QTextEdit:hover, QPlainTextEdit:hover, QAbstractSpinBox:hover {
+  border: 1px solid $border$; }
+QLineEdit:focus, QTextEdit:focus, QPlainTextEdit:focus, QAbstractSpinBox:focus {
+  border: 1px solid $border$;
+  background-color: $input_focus$; }
+QLineEdit[valid-filter=false] {
+  background-color: $invalid$; }
+QAbstractSpinBox::up-button, QAbstractSpinBox::down-button {
+  background: transparent;
+  border: none;
+  width: 14px; }
+QAbstractSpinBox::up-arrow {
+  image: url("./$folder$/art/arrow-up.svg");
+  width: 8px;
+  height: 8px; }
+QAbstractSpinBox::down-arrow {
+  image: url("./$folder$/art/arrow-down.svg");
+  width: 8px;
+  height: 8px; }
+QComboBox {
+  background-color: $input$;
+  border: 1px solid $border_dim$;
+  padding: 3px 22px 3px 6px;
+  min-height: 18px; }
+QComboBox:hover, QComboBox:on {
+  border: 1px solid $border$; }
+QComboBox::drop-down {
+  border: none;
+  width: 20px;
+  subcontrol-origin: padding;
+  subcontrol-position: top right; }
+QComboBox::down-arrow {
+  image: url("./$folder$/art/arrow-down.svg");
+  width: 10px;
+  height: 10px; }
+QComboBox QAbstractItemView {
+  background-color: $bg$;
+  border: 1px solid $border$;
+  selection-background-color: $accent_soft$;
+  outline: none; }
+
+/* ---- Check boxes and radio buttons, in the list views too ---- */
+QCheckBox, QRadioButton {
+  spacing: 6px; }
+QCheckBox::indicator, QTreeView::indicator, QListView::indicator, QTableView::indicator, QGroupBox::indicator {
+  width: 14px;
+  height: 14px; }
+QCheckBox::indicator:unchecked, QTreeView::indicator:unchecked, QListView::indicator:unchecked, QTableView::indicator:unchecked, QGroupBox::indicator:unchecked {
+  image: url("./$folder$/art/check-off.svg"); }
+QCheckBox::indicator:unchecked:hover, QTreeView::indicator:unchecked:hover, QListView::indicator:unchecked:hover, QGroupBox::indicator:unchecked:hover {
+  image: url("./$folder$/art/check-off-hover.svg"); }
+QCheckBox::indicator:checked, QTreeView::indicator:checked, QListView::indicator:checked, QTableView::indicator:checked, QGroupBox::indicator:checked {
+  image: url("./$folder$/art/check-on.svg"); }
+QCheckBox::indicator:indeterminate, QTreeView::indicator:indeterminate {
+  image: url("./$folder$/art/check-part.svg"); }
+QCheckBox::indicator:disabled, QTreeView::indicator:disabled {
+  image: url("./$folder$/art/check-disabled.svg"); }
+QRadioButton::indicator {
+  width: 14px;
+  height: 14px; }
+QRadioButton::indicator:unchecked {
+  image: url("./$folder$/art/radio-off.svg"); }
+QRadioButton::indicator:unchecked:hover {
+  image: url("./$folder$/art/radio-off-hover.svg"); }
+QRadioButton::indicator:checked {
+  image: url("./$folder$/art/radio-on.svg"); }
+
+/* ---- Lists, trees and tables ---- */
+QAbstractItemView {
+  background-color: $bg$;
+  alternate-background-color: $bg$;
+  border: 1px solid $border_dim$;
+  selection-background-color: $accent_soft$;
+  selection-color: $text$; }
+QAbstractItemView[filtered=true] {
+  border: 1px solid $accent_text$; }
+QAbstractItemView::item:hover {
+  background-color: $border_soft$; }
+QAbstractItemView::item:selected {
+  background-color: $accent_soft$;
+  color: $text$; }
+QTreeView::branch {
+  background: transparent; }
+QTreeView::branch:has-children:!has-siblings:closed, QTreeView::branch:closed:has-children:has-siblings {
+  image: url("./$folder$/art/arrow-right.svg"); }
+QTreeView::branch:open:has-children:!has-siblings, QTreeView::branch:open:has-children:has-siblings {
+  image: url("./$folder$/art/arrow-down.svg"); }
+QHeaderView {
+  background-color: $bg$;
+  border: none; }
+QHeaderView::section {
+  background-color: $bg$;
+  color: $dim$;
+  border: none;
+  border-right: 1px solid $border_faint$;
+  border-bottom: 1px solid $border_dim$;
+  padding: 4px 4px; }
+QHeaderView::section:hover {
+  background-color: $border_soft$;
+  color: $text$; }
+QHeaderView::up-arrow {
+  image: url("./$folder$/art/arrow-up.svg");
+  width: 8px;
+  height: 8px; }
+QHeaderView::down-arrow {
+  image: url("./$folder$/art/arrow-down.svg");
+  width: 8px;
+  height: 8px; }
+QTableView QTableCornerButton::section {
+  background-color: $bg$;
+  border: none; }
+
+/* ---- The mod list: separators and mods coloured separately. With collapsible separators MO2's list is a tree whose
+   parent rows are the separators, so ::item:has-children is a separator and nothing else; mods are the view's own
+   background, and no ::item rule touches a mod row, so MO2's conflict highlight stays visible. ---- */
+QTreeView#modList {
+  background-color: $mod_row$;
+  alternate-background-color: $mod_row$; }
+QTreeView#modList::item:has-children {
+  background-color: $separator$;
+  color: $text$; }
+QTreeView#modList::item:has-children:hover {
+  background-color: $border_soft$; }
+QTreeView#modList::item:has-children:selected {
+  background-color: $accent_soft$; }
+
+/* ---- Tabs ---- */
+QTabBar {
+  background: transparent; }
+QTabBar::tab {
+  background-color: transparent;
+  color: $dim$;
+  border: 1px solid transparent;
+  border-bottom: 1px solid $border_dim$;
+  padding: 5px 12px;
+  margin-right: 2px; }
+QTabBar::tab:hover {
+  color: $text$;
+  background-color: $border_soft$; }
+QTabBar::tab:selected {
+  color: $text$;
+  background-color: $accent_faint$;
+  border: 1px solid $border$;
+  border-bottom: 1px solid $accent_text$; }
+QTabBar::tab:disabled {
+  color: $border_dim$; }
+QTabBar QToolButton {
+  background-color: $bg$;
+  border: 1px solid $border_dim$; }
+QTabBar QToolButton::left-arrow {
+  image: url("./$folder$/art/arrow-left.svg"); }
+QTabBar QToolButton::right-arrow {
+  image: url("./$folder$/art/arrow-right.svg"); }
+
+/* ---- Scrollbars ---- */
+QScrollBar:vertical {
+  background-color: $bg$;
+  width: 12px;
+  margin: 0; }
+QScrollBar:horizontal {
+  background-color: $bg$;
+  height: 12px;
+  margin: 0; }
+QScrollBar::handle:vertical {
+  background-color: $border_dim$;
+  min-height: 24px;
+  margin: 2px 3px; }
+QScrollBar::handle:horizontal {
+  background-color: $border_dim$;
+  min-width: 24px;
+  margin: 3px 2px; }
+QScrollBar::handle:hover {
+  background-color: $border$; }
+QScrollBar::add-line, QScrollBar::sub-line {
+  width: 0;
+  height: 0;
+  border: none;
+  background: none; }
+QScrollBar::add-page, QScrollBar::sub-page {
+  background: none; }
+QAbstractScrollArea::corner {
+  background-color: $bg$; }
+
+/* ---- Progress, sliders, the rest ---- */
+QProgressBar {
+  background-color: $input$;
+  border: 1px solid $border_dim$;
+  text-align: center;
+  color: $text$; }
+QProgressBar::chunk {
+  background-color: $accent_mid$; }
+QSlider::groove:horizontal {
+  height: 2px;
+  background-color: $border_dim$; }
+QSlider::handle:horizontal {
+  background-color: $accent_text$;
+  border: 1px solid $border$;
+  width: 10px;
+  margin: -6px 0; }
+QStatusBar {
+  background-color: $bg$;
+  border-top: 1px solid $border_dim$; }
+QStatusBar::item {
+  border: none; }
+QDockWidget::title {
+  background-color: $bg$;
+  border-bottom: 1px solid $border_dim$;
+  padding: 4px; }
+QLCDNumber {
+  background-color: $input$;
+  border: 1px solid $border_dim$;
+  color: $text$; }
+SaveGameInfoWidget {
+  background-color: $bg$;
+  border: 1px solid $border$;
+  color: $text$; }
+
+/* ---- Icons: Njordlinger's set in every theme (the owner, 2026-09-26: "i like the icons in njordlinger so keep all of them
+   for every theme"). MO2 copies qproperty-icon from dummy buttons named after its toolbar actions onto the actions
+   (src/mainwindow.cpp, v2.5.2); the other names are MO2's own buttons. ---- */
+#actionChange_Game { qproperty-icon: url("./$folder$/icons/actionChange_Game.png"); }
+#actionInstallMod { qproperty-icon: url("./$folder$/icons/actionInstallMod.png"); }
+#actionNexus { qproperty-icon: url("./$folder$/icons/actionNexus.png"); }
+#actionModPage { qproperty-icon: url("./$folder$/icons/actionModPage.png"); }
+#actionAdd_Profile { qproperty-icon: url("./$folder$/icons/actionAdd_Profile.png"); }
+#action_Refresh { qproperty-icon: url("./$folder$/icons/action_Refresh.png"); }
+#actionModify_Executables { qproperty-icon: url("./$folder$/icons/actionModify_Executables.png"); }
+#actionTool { qproperty-icon: url("./$folder$/icons/actionTool.png"); }
+#actionSettings { qproperty-icon: url("./$folder$/icons/actionSettings.png"); }
+#actionEndorseMO { qproperty-icon: url("./$folder$/icons/actionEndorseMO.png"); }
+#actionNotifications { qproperty-icon: url("./$folder$/icons/problems.svg"); }
+#actionUpdate { qproperty-icon: url("./$folder$/icons/actionUpdate.png"); }
+#actionHelp { qproperty-icon: url("./$folder$/icons/actionHelp.png"); }
+
+#refreshButton, #btnRefreshData, #dataTabRefresh, #btnRefreshDownloads, #refresh {
+  qproperty-icon: url("./$folder$/icons/action_Refresh.png"); icon-size: 18px; }
+#visitNexus { qproperty-icon: url("./$folder$/icons/actionNexus.png"); }
+#endorse { qproperty-icon: url("./$folder$/icons/actionEndorseMO.png"); icon-size: 18px; }
+#listOptionsBtn { qproperty-icon: url("./$folder$/icons/dots.svg"); }
+#openFolderMenu { qproperty-icon: url("./$folder$/icons/folder.svg"); icon-size: 18px; }
+#restoreModsButton, #restoreButton { qproperty-icon: url("./$folder$/icons/restore.svg"); icon-size: 18px; }
+#saveModsButton, #saveButton { qproperty-icon: url("./$folder$/icons/backup.svg"); icon-size: 18px; }
+#clearFiltersButton { qproperty-icon: url("./$folder$/icons/cross.svg"); }
+#bossButton { qproperty-icon: url("./$folder$/icons/sort.svg"); icon-size: 18px; }
+#clearCacheButton, #revokeNexusAuthButton, #nexusDisconnect { qproperty-icon: url("./$folder$/icons/cross.svg"); icon-size: 18px; }
+#deactivateESP { qproperty-icon: url("./$folder$/icons/minus.svg"); }
+#activateESP { qproperty-icon: url("./$folder$/icons/plus.svg"); }
+#startButton { qproperty-icon: url("./$folder$/icons/play.svg"); }
+#linkButton { qproperty-icon: url("./$folder$/icons/shortcut.svg"); icon-size: 18px; }
+#track { qproperty-icon: url("./$folder$/icons/pin.svg"); }
